@@ -423,8 +423,19 @@
             </div>
 
             <div class="flex justify-center mt-4 sm:items-center">
-                <p>new page</p>
+                <h2>Pizza List</h2>
             </div>
+            @foreach($pizzas as $pizza)
+            <div>
+                {{$loop->index}} - {{$pizza['name']}} - {{$pizza['type']}}
+                @if($loop->first)
+                <span><b> - first in the loop</b></span>
+                @endif
+                @if($loop->last)
+                <span><b> - last in the loop</b></span>
+                @endif
+            </div>
+            @endforeach
         </div>
     </div>
 </body>

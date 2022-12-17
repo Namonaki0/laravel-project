@@ -18,5 +18,10 @@ Route::get('/', function () {
 });
 
 Route::get('/new', function () {
-    return view('new');
+    $pizzas = [
+        ['type' => 'vegetarian', 'name' => 'herbal delight', 'price' => 15],
+        ['type' => 'meat', 'name' => 'mighty meaty', 'price' => 21],
+        ['type' => 'meat', 'name' => 'meat feast', 'price' => 23],
+    ];
+    return view('new', ['pizzas' => $pizzas]);
 });
