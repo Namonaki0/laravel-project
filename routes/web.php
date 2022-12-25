@@ -23,5 +23,15 @@ Route::get('/new', function () {
         ['type' => 'meat', 'name' => 'mighty meaty', 'price' => 21],
         ['type' => 'meat', 'name' => 'meat feast', 'price' => 23],
     ];
-    return view('new', ['pizzas' => $pizzas]);
+
+    return view('new', [
+        'pizzas' => $pizzas,
+        'name' => request('name'),
+        'age' => request('age')
+    ]);
+});
+
+Route::get('/new/{id}', function ($id) {
+
+    return view('details', ['id' => $id]);
 });
