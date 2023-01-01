@@ -31,21 +31,12 @@
         <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
         </div>
 
-        <p>{{ $name }}</p>
-        <p>{{ $age }}</p>
-
         <div class="flex justify-center mt-4 sm:items-center">
             <h2>Pizza List</h2>
         </div>
         @foreach($pizzas as $pizza)
         <div>
-            {{$loop->index}} - {{$pizza['name']}} - {{$pizza['type']}}
-            @if($loop->first)
-            <span><b> - first in the loop</b></span>
-            @endif
-            @if($loop->last)
-            <span><b> - last in the loop</b></span>
-            @endif
+            {{ $pizza->name }} - {{ $pizza->type }} - {{ $pizza->base }}
         </div>
         @endforeach
     </div>

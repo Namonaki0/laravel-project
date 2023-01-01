@@ -3,21 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pizza;
 
 class PizzaController extends Controller
 {
     public function index()
     {
-        $pizzas = [
-            ['type' => 'vegetarian', 'name' => 'herbal delight', 'price' => 15],
-            ['type' => 'meat', 'name' => 'mighty meaty', 'price' => 21],
-            ['type' => 'meat', 'name' => 'meat feast', 'price' => 23],
-        ];
+        // $pizzas = Pizza::all();
+        // $pizzas = Pizza::orderBy('name', 'desc')->get();  // order - asc or desc
+        // $pizzas = Pizza::where('type', 'spicy')->get();  // based on a certain condition
+        $pizzas = Pizza::latest()->get();  // order of latest record
 
         return view('new', [
-            'pizzas' => $pizzas,
-            'name' => request('name'),
-            'age' => request('age')
+            'pizzas' => $pizzas
         ]);
     }
 
