@@ -35,6 +35,7 @@
             <img src="img/pizza.PNG" alt="pizza logo" class="logo">
             <h1>Pizza House</h1>
         </div>
+        <p class="order-message">{{ session('message') }}</p>
         <a href="/pizzas/create">Order a pizza</a>
     </div>
 </div>
