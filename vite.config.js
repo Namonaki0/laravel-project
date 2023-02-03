@@ -1,5 +1,4 @@
 import { defineConfig } from "vite";
-const path = require("path");
 import laravel from "laravel-vite-plugin";
 import vue from "@vitejs/plugin-vue";
 
